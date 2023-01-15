@@ -7,7 +7,7 @@ from deposit import Deposit
 
 class User:
     def __init__(self, **kwargs):
-        self.pip = kwargs["pin"]
+        self.pin = kwargs["pin"]
         self.balance = self.create_balance(**kwargs["balance"])
         self.deposits = self.create_deposits(kwargs["deposits"])
 
