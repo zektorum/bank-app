@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QMainWindow
 
 from src.user import User
 from src.utils.window import create_dialog
+from src.windows.main_menu import MainMenu
 
 
 class AuthWindow(QMainWindow):
@@ -17,10 +18,16 @@ class AuthWindow(QMainWindow):
         self.submitButton.clicked.connect(self.auth)
         self.exitButton.clicked.connect(self.close)
 
+        self.menu = None
+
     def auth(self):
         user = self.get_user_by_pin(self.pinInputField.text())
         if user is None:
             create_dialog(self, "Ошибка!", "Введён неверный PIN.")
+        else:
+            self.hide()
+            self.menu = MainMenu(user)
+            self.menu.show()
 
     def get_users(self):
         data = ""
