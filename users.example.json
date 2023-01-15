@@ -1,0 +1,22 @@
+[
+  {
+    "pin": 1234,
+    "name": "Alex",
+    "last_name": "Smirnov",
+    "balance": {
+      "rub": 1234.3,
+      "usd": 542.3,
+      "eur": 864.1
+    },
+    "deposits": [
+      {
+        "type": "abv",
+        "date": "10.10.2025"
+      },
+      {
+        "type": "abc",
+        "date": "11.11.2030"
+      }
+    ]
+  }
+]
