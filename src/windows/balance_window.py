@@ -1,12 +1,12 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow
 
 from src.user import User
+from src.windows.main_menu_element import MainMenuElement
 
 
-class BalanceWindow(QMainWindow):
+class BalanceWindow(MainMenuElement):
     def __init__(self, previous_window, user: User):
-        super().__init__()
+        super().__init__(previous_window)
         uic.loadUi("src/windows/ui/deposits_info.ui", self)
 
         self.user = user
@@ -18,7 +18,3 @@ class BalanceWindow(QMainWindow):
         self.eurValueLabel.setText(str(user.balance.eur))
 
         self.exitPushButton.clicked.connect(self.exit_to_menu)
-
-    def exit_to_menu(self):
-        self.previous_window.show()
-        self.hide()
