@@ -1,5 +1,5 @@
 from json import loads, dumps
-from typing import List
+from typing import List, Optional
 
 from bank_app.user import User
 
@@ -26,6 +26,18 @@ def find_user_in_db(user: User) -> int:
         if user.id == element[1].id:
             return element[0]
     return -1
+
+
+def find_user_in_db_by_id(id: int) -> Optional[User]:
+    """
+    Возвращает объект пользователя по его id
+    :param id: непосредственно id пользователя
+    :return: объект пользователя
+    """
+    users = get_users()
+    for element in users:
+        if element.id == id:
+            return element
 
 
 def create_original_list_from_users_list(users: List[User]) -> List[dict]:

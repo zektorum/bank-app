@@ -6,6 +6,7 @@ from bank_app.windows.add_money import AddMoneyWindow
 from bank_app.windows.balance_window import BalanceWindow
 from bank_app.windows.deposits_window import DepositsWindow
 from bank_app.windows.open_deposit import OpenDepositWindow
+from bank_app.windows.money_transfer_window import MoneyTransferWindow
 
 
 class MainMenu(QMainWindow):
@@ -20,16 +21,19 @@ class MainMenu(QMainWindow):
         self.deposits_window = None
         self.add_money_window = None
         self.open_deposit_window = None
+        self.transfer_window = None
 
         self.exitPushButton.clicked.connect(self.exit_to_auth)
         self.addPushButton.clicked.connect(self.add_money)
         self.statusPushButton.clicked.connect(self.show_balance)
         self.listDepositsPushButton.clicked.connect(self.show_deposits)
         self.addDepositPushButton.clicked.connect(self.add_deposit)
+        self.transferPushButton.clicked.connect(self.transfer)
 
     def show_balance(self):
         self.hide()
         self.balance_window = BalanceWindow(self, self.user)
+        self.balance_window.update_balance()
         self.balance_window.show()
 
     def show_deposits(self):
@@ -46,6 +50,11 @@ class MainMenu(QMainWindow):
         self.hide()
         self.open_deposit_window = OpenDepositWindow(self, self.user)
         self.open_deposit_window.show()
+
+    def transfer(self):
+        self.hide()
+        self.transfer_window = MoneyTransferWindow(self, self.user)
+        self.transfer_window.show()
 
     def exit_to_auth(self):
         self.auth_window.show()

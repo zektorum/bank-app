@@ -13,8 +13,9 @@ class BalanceWindow(MainMenuElement):
         self.previous_window = previous_window
         self.label.setText(self.label.text().replace("XXXXXXXX", str(user.id)))
 
-        self.rubValueLabel.setText(str(user.balance.rub))
-        self.usdValueLabel.setText(str(user.balance.usd))
-        self.eurValueLabel.setText(str(user.balance.eur))
-
         self.exitPushButton.clicked.connect(self.exit_to_menu)
+
+    def update_balance(self):
+        self.rubValueLabel.setText(str(self.user.balance.rub))
+        self.usdValueLabel.setText(str(self.user.balance.usd))
+        self.eurValueLabel.setText(str(self.user.balance.eur))
