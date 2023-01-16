@@ -1,6 +1,7 @@
 from PyQt5 import uic
 
 from bank_app.user import User
+from bank_app.utils.money import replenish_balance
 from bank_app.utils.window import create_dialog
 from bank_app.utils.users import update_user
 from bank_app.windows.main_menu_element import MainMenuElement
@@ -20,11 +21,6 @@ class AddMoneyWindow(MainMenuElement):
     def add_money(self):
         currency = self.currencyComboBox.currentText()
         amount = float(self.lineEdit.text())
-        if currency == "RUB":
-            self.user.balance.rub += amount
-        if currency == "USD":
-            self.user.balance.usd += amount
-        if currency == "EUR":
-            self.user.balance.eur += amount
+        replenish_balance(self.user, currency, amount)
         update_user(self.user)
         create_dialog(self, "Пополнение", "Операция прошла успешно!")
