@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QMainWindow
 from bank_app.user import User
 from bank_app.utils.users import get_users
 from bank_app.utils.window import create_dialog
-from bank_app.windows.main_menu import MainMenu
+from bank_app.windows.main_menu_window import MainMenu
 
 
 class AuthWindow(QMainWindow):

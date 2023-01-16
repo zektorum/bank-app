@@ -2,11 +2,11 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow
 
 from bank_app.user import User
-from bank_app.windows.add_money import AddMoneyWindow
+from bank_app.windows.add_money_window import AddMoneyWindow
 from bank_app.windows.balance_window import BalanceWindow
 from bank_app.windows.currency_exchange_window import CurrencyExchangeWindow
 from bank_app.windows.deposits_window import DepositsWindow
-from bank_app.windows.open_deposit import OpenDepositWindow
+from bank_app.windows.open_deposit_window import OpenDepositWindow
 from bank_app.windows.money_transfer_window import MoneyTransferWindow
 from bank_app.windows.remove_money_window import RemoveMoneyWindow
 
