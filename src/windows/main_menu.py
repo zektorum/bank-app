@@ -7,15 +7,17 @@ from src.windows.deposits_window import DepositsWindow
 
 
 class MainMenu(QMainWindow):
-    def __init__(self, user: User):
+    def __init__(self, auth_window, user: User):
         super().__init__()
         uic.loadUi("src/windows/ui/main_menu.ui", self)
 
         self.user = user
+        self.auth_window = auth_window
 
         self.balance_window = None
         self.deposits_window = None
 
+        self.exitPushButton.clicked.connect(self.exit_to_auth)
         self.statusPushButton.clicked.connect(self.show_balance)
         self.listDepositsPushButton.clicked.connect(self.show_deposits)
 
@@ -28,4 +30,8 @@ class MainMenu(QMainWindow):
         self.hide()
         self.deposits_window = DepositsWindow(self, self.user)
         self.deposits_window.show()
+
+    def exit_to_auth(self):
+        self.auth_window.show()
+        self.hide()
 

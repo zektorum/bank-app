@@ -25,8 +25,9 @@ class AuthWindow(QMainWindow):
         if user is None:
             create_dialog(self, "Ошибка!", "Введён неверный PIN.")
         else:
+            self.pinInputField.setText("")
             self.hide()
-            self.menu = MainMenu(user)
+            self.menu = MainMenu(self, user)
             self.menu.show()
 
     def get_users(self):
