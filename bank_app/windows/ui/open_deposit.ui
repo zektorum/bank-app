@@ -84,7 +84,7 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>350</y>
+      <y>450</y>
       <width>191</width>
       <height>41</height>
      </rect>
@@ -101,8 +101,8 @@
    <widget class="QPushButton" name="enterPushButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>350</y>
+      <x>170</x>
+      <y>450</y>
       <width>201</width>
       <height>41</height>
      </rect>
@@ -139,6 +139,39 @@
       <month>12</month>
       <day>12</day>
      </datetime>
+    </property>
+   </widget>
+   <widget class="QLabel" name="amountLabel">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>350</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Сумма:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="amountLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>350</y>
+      <width>361</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
     </property>
    </widget>
   </widget>

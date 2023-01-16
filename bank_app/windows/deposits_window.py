@@ -17,4 +17,6 @@ class DepositsWindow(MainMenuElement):
 
     def create_listview_items(self):
         for deposit in self.user.deposits:
-            self.listWidget.addItem(QListWidgetItem(deposit.date + 70 * " " + deposit.type))
+            self.listWidget.addItem(
+                QListWidgetItem(f"{deposit.date:<35} {deposit.type:35} {deposit.amount:<20}")
+            )

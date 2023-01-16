@@ -22,7 +22,8 @@ class OpenDepositWindow(MainMenuElement):
         date_obj = self.dateEdit.date()
         day, month, year = date_obj.day(), date_obj.month(), date_obj.year()
         date = f"{day}.{month}.{year}"
+        amount = float(self.amountLineEdit.text())
         type = self.typeComboBox.currentText()
-        self.user.deposits.append(Deposit(type, date))
+        self.user.deposits.append(Deposit(type, amount, date))
         update_user(self.user)
         create_dialog(self, "Открытие вклада", "Вклад успешно открыт!")
