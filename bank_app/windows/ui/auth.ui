@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Авторизация</string>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="pinInputField">
     <property name="geometry">
@@ -48,6 +51,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
