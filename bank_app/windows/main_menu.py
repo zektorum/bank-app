@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QMainWindow
 from bank_app.user import User
 from bank_app.windows.add_money import AddMoneyWindow
 from bank_app.windows.balance_window import BalanceWindow
+from bank_app.windows.currency_exchange_window import CurrencyExchangeWindow
 from bank_app.windows.deposits_window import DepositsWindow
 from bank_app.windows.open_deposit import OpenDepositWindow
 from bank_app.windows.money_transfer_window import MoneyTransferWindow
@@ -22,6 +23,7 @@ class MainMenu(QMainWindow):
         self.add_money_window = None
         self.open_deposit_window = None
         self.transfer_window = None
+        self.currency_exchange_window = None
 
         self.exitPushButton.clicked.connect(self.exit_to_auth)
         self.addPushButton.clicked.connect(self.add_money)
@@ -29,6 +31,7 @@ class MainMenu(QMainWindow):
         self.listDepositsPushButton.clicked.connect(self.show_deposits)
         self.addDepositPushButton.clicked.connect(self.add_deposit)
         self.transferPushButton.clicked.connect(self.transfer)
+        self.exchangePushButton.clicked.connect(self.exchange)
 
     def show_balance(self):
         self.hide()
@@ -55,6 +58,11 @@ class MainMenu(QMainWindow):
         self.hide()
         self.transfer_window = MoneyTransferWindow(self, self.user)
         self.transfer_window.show()
+
+    def exchange(self):
+        self.hide()
+        self.currency_exchange_window = CurrencyExchangeWindow(self, self.user)
+        self.currency_exchange_window.show()
 
     def exit_to_auth(self):
         self.auth_window.show()
