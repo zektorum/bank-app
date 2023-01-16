@@ -80,9 +80,9 @@
    <widget class="QComboBox" name="currencyFromComboBox">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>170</x>
       <y>200</y>
-      <width>361</width>
+      <width>391</width>
       <height>41</height>
      </rect>
     </property>
@@ -110,9 +110,9 @@
    <widget class="QComboBox" name="currencyToComboBox">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>170</x>
       <y>280</y>
-      <width>361</width>
+      <width>391</width>
       <height>41</height>
      </rect>
     </property>
@@ -158,9 +158,9 @@
    <widget class="QLineEdit" name="amountLineEdit">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>170</x>
       <y>360</y>
-      <width>361</width>
+      <width>391</width>
       <height>41</height>
      </rect>
     </property>
