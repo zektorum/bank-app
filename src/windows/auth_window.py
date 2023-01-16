@@ -1,10 +1,10 @@
-from json import loads
 from typing import Optional
 
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow
 
 from src.user import User
+from src.utils.users import get_users
 from src.utils.window import create_dialog
 from src.windows.main_menu import MainMenu
 
@@ -14,7 +14,7 @@ class AuthWindow(QMainWindow):
         super().__init__()
         uic.loadUi("src/windows/ui/auth.ui", self)
 
-        self.users = self.get_users()
+        self.users = get_users()
         self.submitButton.clicked.connect(self.auth)
         self.exitButton.clicked.connect(self.close)
 
@@ -29,13 +29,6 @@ class AuthWindow(QMainWindow):
             self.hide()
             self.menu = MainMenu(self, user)
             self.menu.show()
-
-    def get_users(self):
-        data = ""
-        with open("users.json", "r") as db:
-            data = "".join(db.readlines())
-        users_data = loads(data)
-        return [User(**element) for element in users_data]
 
     def get_user_by_pin(self, pin: str) -> Optional[User]:
         if not pin.isnumeric():
