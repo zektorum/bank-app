@@ -1,7 +1,7 @@
 from json import loads, dumps
 from typing import List
 
-from src.user import User
+from bank_app.user import User
 
 
 def get_users() -> List[User]:

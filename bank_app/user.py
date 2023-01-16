@@ -1,8 +1,8 @@
 from datetime import datetime
 from typing import List
 
-from src.balance import Balance
-from src.deposit import Deposit
+from bank_app.balance import Balance
+from bank_app.deposit import Deposit
 
 
 class User:

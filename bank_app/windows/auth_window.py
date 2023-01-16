@@ -3,16 +3,16 @@ from typing import Optional
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow
 
-from src.user import User
-from src.utils.users import get_users
-from src.utils.window import create_dialog
-from src.windows.main_menu import MainMenu
+from bank_app.user import User
+from bank_app.utils.users import get_users
+from bank_app.utils.window import create_dialog
+from bank_app.windows.main_menu import MainMenu
 
 
 class AuthWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("src/windows/ui/auth.ui", self)
+        uic.loadUi("bank_app/windows/ui/auth.ui", self)
 
         self.users = get_users()
         self.submitButton.clicked.connect(self.auth)

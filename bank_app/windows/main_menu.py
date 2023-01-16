@@ -1,15 +1,15 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow
 
-from src.user import User
-from src.windows.balance_window import BalanceWindow
-from src.windows.deposits_window import DepositsWindow
+from bank_app.user import User
+from bank_app.windows.balance_window import BalanceWindow
+from bank_app.windows.deposits_window import DepositsWindow
 
 
 class MainMenu(QMainWindow):
     def __init__(self, auth_window, user: User):
         super().__init__()
-        uic.loadUi("src/windows/ui/main_menu.ui", self)
+        uic.loadUi("bank_app/windows/ui/main_menu.ui", self)
 
         self.user = user
         self.auth_window = auth_window
