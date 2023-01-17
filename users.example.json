@@ -1,8 +1,7 @@
 [
   {
+    "id": 123456789,
     "pin": 1234,
-    "name": "Alex",
-    "last_name": "Smirnov",
     "balance": {
       "rub": 1234.3,
       "usd": 542.3,
@@ -11,10 +10,12 @@
     "deposits": [
       {
         "type": "abv",
+        "amount": 1234.5,
         "date": "10.10.2025"
       },
       {
         "type": "abc",
+        "amount": 7442.3,
         "date": "11.11.2030"
       }
     ]
