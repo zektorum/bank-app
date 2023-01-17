@@ -59,7 +59,7 @@ def create_original_list_from_users_list(users: List[User]) -> List[dict]:
             )
         }
         result[index]["deposits"] = [{
-            key: value for key, value in zip(("date", "type"), (deposit.date, deposit.type))
+            key: value for key, value in zip(("date", "amount", "type"), (deposit.date, deposit.amount, deposit.type))
         } for deposit in user.deposits]
         index += 1
     return result

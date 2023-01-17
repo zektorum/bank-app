@@ -16,7 +16,7 @@ class User:
         return Balance(kwargs["rub"], kwargs["eur"], kwargs["usd"])
 
     def create_deposits(self, deposits: List[dict]):
-        return [Deposit(element["type"], element["amount"], element["date"]) for element in deposits]
+        return [Deposit(element.get("type"), element.get("amount"), element.get("date")) for element in deposits]
 
     def open_deposit(self, type: str, date: datetime):
         """
